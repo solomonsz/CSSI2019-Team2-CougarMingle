@@ -1,0 +1,8 @@
+.bigdiv{
+  display:grid;
+  grid-template-rows: 70px 50px repeat(8 , 1fr) 50px 100px
+}
+.name{
+  grid-row-start: 1;
+  grid-row-end:2;
+}
