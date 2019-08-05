@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+.bigdiv{
+  display:grid;
+  grid-template-rows: 70px 50px repeat(8 , 1fr) 50px 100px
+}
+.name{
+  grid-row-start: 1;
+  grid-row-end:2;
+=======
 body {
   text-align: center;
 }
@@ -20,4 +29,5 @@ button {
 /* Add a hover effect for buttons */
 button:hover {
  opacity: 0.8;
+>>>>>>> 587c8ea8f6569f1f92d629ab73d75ed16ea0aca6
 }

@@ -1,0 +1,12 @@
+.bigdiv{
+  display:grid;
+  grid-template-rows: 70px 50px repeat(8 , 80px) 50px 100px;
+  grid-template-columns: 1fr 5fr 1fr
+}
+.name{
+  grid-row-start: 1;
+  grid-row-end:2;
+  grid-column-start:2;
+  grid-column-end:3;
+  text-align: center;
+}
