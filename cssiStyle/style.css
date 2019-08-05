@@ -14,14 +14,10 @@ button {
  margin: 8px 0;
  border: none;
  cursor: pointer;
- width: 50%;
+ width: 10%;
 }
 
 /* Add a hover effect for buttons */
 button:hover {
  opacity: 0.8;
-}
-
-.signInButton{
-
 }
