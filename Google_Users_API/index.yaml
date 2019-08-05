@@ -1,0 +1,5 @@
+#gcloud datastore indexes create index.yaml
+indexes:
+- kind: CssiUser
+  properties:
+  - name: email
