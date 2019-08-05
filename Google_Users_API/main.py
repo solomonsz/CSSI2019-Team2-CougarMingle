@@ -14,6 +14,7 @@ class MainHandler(webapp2.RequestHandler):
     #users.get_current_user() return a user object if someone is
     #logged in already. It will return None if the user has not logged in yet.
     user = users.get_current_user()
+
     # If the user is logged in...
     if user:
       signout_link_html = '<a href="%s">sign out</a>' % (
@@ -34,7 +35,13 @@ class MainHandler(webapp2.RequestHandler):
       else:
         # Offer a registration form for a first-time visitor:
         self.response.write('''
-            Welcome to our site, %s!  Please sign up! <br>
+            Welcome to our WEB, %s!  Please sign up! <br>
+            <form method="post" action="/">
+            <input type="text" name="first_name">
+            <input type="text" name="last_name">
+            <input type="submit">
+            </form><br> %s <br>
+            Choose your interests, %s! <br>
             <form method="post" action="/">
             <input type="text" name="first_name">
             <input type="text" name="last_name">
