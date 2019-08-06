@@ -1,92 +1,25 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="../cssiStyle/surveyPage.css">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../cssiStyle/surveyPage.css">
+    </link>
     <title>Cougar Mingle</title>
   </head>
-  <body>
-    <h1>Please select your interets.
-    <div class="container">
-         <button class="button art" type="button">Art</button>
-         <button class="button music" type="button">Music</button>
-         <button class="button sports" type="button">Sports</button>
-         <button class="button health" type="button">Health & Fitness</button>
-         <button class="button games" type="button">Video Games</button>
-         <button class="button tv" type="button">Thots</button>
-    </div>
-    <!-- <h1>Survey</h1>
-    <div class="container">
- <form action="action_page.php">
-   <div class="row">
-     <div class="col-25">
-       <label for="fname">First Name</label>
-     </div>
-     <div class="col-75">
-       <input type="text" id="fname" name="firstname" placeholder="First Name">
-     </div>
-   </div>
-   <div class="row">
-     <div class="col-25">
-       <label for="lname">Last Name</label>
-     </div>
-     <div class="col-75">
-       <input type="text" id="lname" name="lastname" placeholder="Last Name">
-     </div>
-   </div>
-   <div class="row">
-     <div class="col-25">
-       <label for="Major">Major</label>
-     </div>
-     <div class="col-75">
-       <select id="Major" name="Major">
-         <option value="accounting">Accounting</option>
-         <option value="AIS">American Indian Studies</option>
-         <option value="Anthropology">Anthropology</option>
-         <option value="AMD">Art, Media, and Design</option>
-         <option value="appliedPhysics">Applied Physics</option>
-         <option value="Biochemistry">Biochemistry</option>
-         <option value="Biological Sciences">Biological Sciences</option>
-         <option value="Biotechnology">Biotechnology</option>
-         <option value="Chemistry">Chemistry</option>
-         <option value="CAD">Child & Adolescent Development</option>
-         <option value="Communication">Communication</option>
-         <option value="Computer Science">Computer Science</option>
-         <option value="CJS">Criminology & Justice Studies</option>
-         <option value="Economics">Economics</option>
-         <option value="Engineering">Engineering</option>
-         <option value="Ethnic Studies">Ethnic Studies</option>
-         <option value="Finance">Finance</option>
-         <option value="Global Business">Global Business</option>
-         <option value="GSCM">Global Supply Chain Management</option>
-         <option value="Global Studies">Global Studies</option>
-         <option value="History">History</option>
-         <option value="Human Development">Human Development</option>
-         <option value="Liberal Studies">Liberal Studies</option>
-         <option value="Literature & Writing Studies">Literature & Writing Studies</option>
-         <option value="Management">Management</option>
-         <option value="Management Information Systems">Management Information Systems</option>
-         <option value="Marketing">Marketing</option>
-         <option value="Mathematics">Mathematics</option>
-         <option value="Media Studies">Media Studies</option>
-         <option value="Music">Music</option>
-         <option value="Nursing">Nursing</option>
-         <option value="Political Science">Political Science</option>
-         <option value="Psychological Science">Psychological Science</option>
-         <option value="Social Sciences">Social Sciences</option>
-         <option value="Sociology">Sociology</option>
-         <option value="Spanish">Spanish</option>
-         <option value="Speech-language Pathology">Speech-language Pathology</option>
-         <option value="Theatre">Theatre</option>
-         <option value="Undeclared">Undeclared</option>
-         <option value="WGSS">Women's, Gender and Sexuality Studies</option>
-       </select>
-     </div>
-   </div>
-   <div class="row">
-     <input type="submit" value="Submit">
-   </div>
- </form>
-</div>-->
-  </body>
+<body>
+<div class="container">
+    <h1 class="title">Select your favorite music generes</h1>
+    <input type="button" id="button" value = "Country" style= "color:black" onclick="setColor('button', '#101010')";/>
+    <input type="button" id="button" value = "Hip-Hop" style= "color:black" onclick="setColor('button', '#101010')";/>
+    <input type="button" id="button" value = "Rock & Roll" style= "color:black" onclick="setColor('button', '#101010')";/>
+    <input type="button" id="button" value = "Dance / Electronic" style= "color:black" onclick="setColor('button', '#101010')";/>
+
+    <h1 class="title">Select your favorite...</h1>
+    <button type="button" class="button" id="country">---</button>
+    <button type="button" class="button" id="hip-hop">---</button>
+    <button type="button" class="button" id="rock-roll">---</button>
+    <button type="button" class="button" id="dance-electronic">---</button>
+  </div>
+<script type="text/javascript" src="../js/surveypage.js">
+</script>
 </html>
