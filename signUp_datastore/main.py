@@ -19,12 +19,14 @@ class HomePageHandler(webapp2.RequestHandler):
 
 
 class EnterInfoHandler(webapp2.RequestHandler):
-    def get(self):  # for a get request
-        welcome_template = the_jinja_env.get_template('templates/welcome.html')
-        #a_variable_dict = {"title": "Sign Up"}
-        self.response.write(welcome_template.render())
+<<<<<<< HEAD
+    # def get(self):  # for a get request
+    #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
+    #     #a_variable_dict = {"title": "Sign Up"}
+    #     self.response.write(welcome_template.render())
     def post(self):
-        self.response.write("A post request to the EnterInfoHandler")
+        welcome_template = the_jinja_env.get_template('templates/welcome.html')
+        self.response.write(welcome_template.render())
         q1 = self.request.get('question1')
         q2 = self.request.get('question2')
         q3 = self.request.get('question3')
@@ -46,6 +48,17 @@ class EnterInfoHandler(webapp2.RequestHandler):
 #                          question2 = q2,
 #                          question3 = q3,
 #                          question4 = q4)
+=======
+    # def get(self):  # for a get request
+    #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
+    #     self.response.write(welcome_template.render())
+
+    def post(self):
+        welcome_template = the_jinja_env.get_template('templates/welcome.html')
+        self.response.write(welcome_template.render())
+
+
+>>>>>>> 379ec929deee37a9515cce5e9b03bce371c27c36
 
 class ShowCsusmUserHandler(webapp2.RequestHandler):
     def post(self):
