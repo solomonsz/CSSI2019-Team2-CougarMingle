@@ -21,12 +21,31 @@ class HomePageHandler(webapp2.RequestHandler):
 class EnterInfoHandler(webapp2.RequestHandler):
     def get(self):  # for a get request
         welcome_template = the_jinja_env.get_template('templates/welcome.html')
-        a_variable_dict = {"title": "Sign Up"}
-        self.response.write(welcome_template.render(a_variable_dict))
-
+        #a_variable_dict = {"title": "Sign Up"}
+        self.response.write(welcome_template.render())
     def post(self):
         self.response.write("A post request to the EnterInfoHandler")
-
+        q1 = self.request.get('question1')
+        q2 = self.request.get('question2')
+        q3 = self.request.get('question3')
+        q4 = self.request.get('question4')
+        squestion = questions(
+                            question1 = q1,
+                            question2 = q2,
+                            question3 = q3,
+                            question4 = q4)
+        squestion.put()
+# class SignUp(webapp2.RequestHandler):
+#     def get(self):
+#         q1 = self.request.get('question1')
+#         q1 = self.request.get('question1')
+#         q1 = self.request.get('question1')
+#         q1 = self.request.get('question1')
+#         squestion = questions(
+#                          question1 = q1,
+#                          question2 = q2,
+#                          question3 = q3,
+#                          question4 = q4)
 
 class ShowCsusmUserHandler(webapp2.RequestHandler):
     def post(self):
@@ -59,5 +78,5 @@ app = webapp2.WSGIApplication([
     ('/', HomePageHandler),
     ('/signUp', EnterInfoHandler),
     ('/userresult', ShowCsusmUserHandler),
-    ('/matching',ChatPage)
+    ('/matching',ChatPage),
 ], debug=True)
