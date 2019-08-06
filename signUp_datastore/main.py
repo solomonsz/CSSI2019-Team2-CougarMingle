@@ -40,7 +40,7 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
 class ChatPage(webapp2.RequestHandler):
     def get(self):  # for a get request
         welcome_template = the_jinja_env.get_template('templates/matchPage.html')
-        name = CsusmUser.query().fetch()
+        allusers = CsusmUser.query().fetch()
         a_variable_dict = {
             "name": name[2]
             # "adjective": "amazing"
