@@ -1,6 +1,6 @@
 from google.appengine.ext import ndb
 
-class CssiUser(ndb.Model):
-  email = ndb.StringProperty(indexed=True)
-  first_name = ndb.StringProperty()
-  last_name = ndb.StringProperty()
+class CsusmUser(ndb.Model):
+  user_first_name = ndb.StringProperty()
+  user_second_name = ndb.StringProperty()
+  u_user_email = ndb.StringProperty(indexed=True)
