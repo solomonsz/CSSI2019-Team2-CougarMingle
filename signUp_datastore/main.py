@@ -19,13 +19,14 @@ class HomePageHandler(webapp2.RequestHandler):
 
 
 class EnterInfoHandler(webapp2.RequestHandler):
-    def get(self):  # for a get request
-        welcome_template = the_jinja_env.get_template('templates/welcome.html')
-        a_variable_dict = {"title": "Sign Up"}
-        self.response.write(welcome_template.render(a_variable_dict))
+    # def get(self):  # for a get request
+    #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
+    #     self.response.write(welcome_template.render())
 
     def post(self):
-        self.response.write("A post request to the EnterInfoHandler")
+        welcome_template = the_jinja_env.get_template('templates/welcome.html')
+        self.response.write(welcome_template.render())
+
 
 
 class ShowCsusmUserHandler(webapp2.RequestHandler):
