@@ -1,25 +1,14 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(2, 250px);
-  grid-template-rows: repeat(3, 250px);
+  grid-template-columns: 1, repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
-.button {
+ .button {
   border: 5px solid white;
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
 }
-.art {
-  background-image: url("https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/9c/42/e2/9c42e21e-9406-d87d-1211-29abbc07e5d4/source/256x256bb.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: white;
+.title {
+  grid-row: 1, span 1;
 }
-.music {
-  background-image: url("https://alternative.me/icons2/youtube-music.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: white;
-}
-/* background-image: url("https://ak1.picdn.net/shutterstock/videos/7881151/thumb/5.jpg");
-background-size: auto; */
