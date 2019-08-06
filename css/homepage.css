@@ -36,6 +36,7 @@ p {
   }
   #index-banner .section {
     top: 10%;
+  
   }
 }
 
@@ -54,4 +55,9 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+
+#cougars {
+  font-size: 35px;
+  font-style: italic;
 }
