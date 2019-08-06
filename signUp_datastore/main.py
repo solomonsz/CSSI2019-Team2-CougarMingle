@@ -2,8 +2,8 @@ import webapp2
 import jinja2
 import os
 from models import CsusmUser
-
-
+from models import *
+from google.appengine.ext import ndb
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -37,7 +37,18 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
                              "line3": user_third_line}
         self.response.write(results_template.render(the_variable_dict))
 
+class ChatPage(webapp2.RequestHandler):
+    def get(self):  # for a get request
+        welcome_template = the_jinja_env.get_template('templates/matchPage.html')
+        name = CsusmUser.query().fetch()
+        a_variable_dict = {
+            "name": name[2]
+            # "adjective": "amazing"
+        }
+        self.response.write(welcome_template.render(a_variable_dict))
+
 app = webapp2.WSGIApplication([
     ('/', EnterInfoHandler),
-    ('/userresult', ShowCsusmUserHandler)
+    ('/userresult', ShowCsusmUserHandler),
+    ('/matching',ChatPage)
 ], debug=True)
