@@ -9,6 +9,14 @@ the_jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class HomePageHandler(webapp2.RequestHandler):
+    def get(self):
+        home_template = the_jinja_env.get_template('templates/homePage.html')
+        self.response.write(home_template.render())
+
+    def post(self):
+        self.response.write("A post request to the HomePageHandler")
+
 
 class EnterInfoHandler(webapp2.RequestHandler):
     def get(self):  # for a get request
@@ -48,7 +56,8 @@ class ChatPage(webapp2.RequestHandler):
         self.response.write(welcome_template.render(a_variable_dict))
 
 app = webapp2.WSGIApplication([
-    ('/', EnterInfoHandler),
+    ('/', HomePageHandler),
+    ('/signUp', EnterInfoHandler),
     ('/userresult', ShowCsusmUserHandler),
     ('/matching',ChatPage)
 ], debug=True)
