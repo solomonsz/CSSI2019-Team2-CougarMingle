@@ -3,6 +3,7 @@ import jinja2
 import os
 from models import CsusmUser
 from models import *
+import models
 from google.appengine.ext import ndb
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -98,10 +99,16 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
         current_user_interests.put()
         # GABY'S CODE END
 
+        count_obj = UserCount.query().fetch()[0]
+        current_count = count_obj.count
+        count_obj.count = current_count + 1
+        count_obj.put()
+
         current_user = CsusmUser(
                          first_name = user_first_line,
                          last_name = user_last_line,
-                         email_address = user_third_line)
+                         email_address = user_third_line,
+                         user_count = current_count)
 
 
         # current_user.put()
