@@ -1,11 +1,14 @@
 from google.appengine.ext import ndb
 
-class CsusmUser(ndb.Model):
-  first_name = ndb.StringProperty(required=True)
-  last_name = ndb.StringProperty(required=False)
-  email_address = ndb.StringProperty(required=False)
 
-# COMMENT
+
+class CsusmUser(ndb.Model):
+    first_name = ndb.StringProperty(required=True)
+    last_name = ndb.StringProperty(required=False)
+    email_address = ndb.StringProperty(required=False)
+    user_count = ndb.IntegerProperty(default=0)
+
+# COMMENT/
 # class questions(ndb.Model):
 #     question1 = ndb.StringProperty(required=True)
 #     question2 = ndb.StringProperty(required=True)
@@ -20,3 +23,12 @@ class CsusmUserInterests(ndb.Model):
     sports_one = ndb.StringProperty(required=True)
     genre_one = ndb.StringProperty(required=True)
 # GABY'S CODE END
+
+class UserCount(ndb.Model):
+    count = ndb.IntegerProperty(default=0)
+
+    def increment(self):
+        self.count += 1
+
+# count = UserCount()
+# count.put()
