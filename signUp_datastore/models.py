@@ -5,14 +5,14 @@ class CsusmUser(ndb.Model):
   last_name = ndb.StringProperty(required=False)
   email_address = ndb.StringProperty(required=False)
 
-<<<<<<< HEAD
-
-class questions(ndb.Model):
-  question1 = ndb.StringProperty(required=True)
-  question2 = ndb.StringProperty(required=True)
-  question3 = ndb.StringProperty(required=True)
-  question4 = ndb.StringProperty(required=True)
-=======
+# <<<<<<< HEAD
+#
+# class questions(ndb.Model):
+#   question1 = ndb.StringProperty(required=True)
+#   question2 = ndb.StringProperty(required=True)
+#   question3 = ndb.StringProperty(required=True)
+#   question4 = ndb.StringProperty(required=True)
+# =======
 # COMMENT
 # class questions(ndb.Model):
 #     question1 = ndb.StringProperty(required=True)
@@ -28,4 +28,3 @@ class CsusmUserInterests(ndb.Model):
     sports_one = ndb.StringProperty(required=True)
     genre_one = ndb.StringProperty(required=True)
 # GABY'S CODE END
->>>>>>> 819b0f5afc567413b24b6b6e76a63a8fcefdff34
