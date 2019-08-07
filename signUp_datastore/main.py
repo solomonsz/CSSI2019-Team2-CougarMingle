@@ -9,6 +9,7 @@ the_jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+
 class HomePageHandler(webapp2.RequestHandler):
     def get(self):
         home_template = the_jinja_env.get_template('templates/homePage.html')
@@ -19,7 +20,6 @@ class HomePageHandler(webapp2.RequestHandler):
 
 
 class EnterInfoHandler(webapp2.RequestHandler):
-<<<<<<< HEAD
     # def get(self):  # for a get request
     #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
     #     #a_variable_dict = {"title": "Sign Up"}
@@ -27,16 +27,16 @@ class EnterInfoHandler(webapp2.RequestHandler):
     def post(self):
         welcome_template = the_jinja_env.get_template('templates/welcome.html')
         self.response.write(welcome_template.render())
-        q1 = self.request.get('question1')
-        q2 = self.request.get('question2')
-        q3 = self.request.get('question3')
-        q4 = self.request.get('question4')
-        squestion = questions(
-                            question1 = q1,
-                            question2 = q2,
-                            question3 = q3,
-                            question4 = q4)
-        squestion.put()
+        # q1 = self.request.get('question1')
+        # q2 = self.request.get('question2')
+        # q3 = self.request.get('question3')
+        # q4 = self.request.get('question4')
+        # squestion = questions(
+        #                     question1 = q1,
+        #                     question2 = q2,
+        #                     question3 = q3,
+        #                     question4 = q4)
+        # squestion.put()
 # class SignUp(webapp2.RequestHandler):
 #     def get(self):
 #         q1 = self.request.get('question1')
@@ -48,17 +48,6 @@ class EnterInfoHandler(webapp2.RequestHandler):
 #                          question2 = q2,
 #                          question3 = q3,
 #                          question4 = q4)
-=======
-    # def get(self):  # for a get request
-    #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
-    #     self.response.write(welcome_template.render())
-
-    def post(self):
-        welcome_template = the_jinja_env.get_template('templates/welcome.html')
-        self.response.write(welcome_template.render())
-
-
->>>>>>> 379ec929deee37a9515cce5e9b03bce371c27c36
 
 class ShowCsusmUserHandler(webapp2.RequestHandler):
     def post(self):
@@ -66,15 +55,27 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
         user_first_line = self.request.get('user-first-name')
         user_last_line = self.request.get('user-last-name')
         user_third_line = self.request.get('user-email-address')
-
+        q1 = self.request.get('question1')
+        q2 = self.request.get('question2')
+        q3 = self.request.get('question3')
+        q4 = self.request.get('question4')
+        test = self.request.get('user-email-address')
         current_user = CsusmUser(
                          first_name = user_first_line,
                          last_name = user_last_line,
                          email_address = user_third_line)
         current_user.put()
+        squestion = questions(
+                        question1 = q1,
+                        question2 = q2,
+                        question3 = q3,
+                        question4 = q4)
+        squestion.put()
+
         the_variable_dict = {"line1": user_first_line,
                              "line2": user_last_line,
-                             "line3": user_third_line}
+                             "line3": user_third_line,
+                             "q1": test}
         self.response.write(results_template.render(the_variable_dict))
 
 class ChatPage(webapp2.RequestHandler):

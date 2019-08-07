@@ -5,8 +5,9 @@ class CsusmUser(ndb.Model):
   last_name = ndb.StringProperty(required=False)
   email_address = ndb.StringProperty(required=False)
 
+
 class questions(ndb.Model):
-    question1 = ndb.StringProperty(required=True)
-    question2 = ndb.StringProperty(required=True)
-    question3 = ndb.StringProperty(required=True)
-    question4 = ndb.StringProperty(required=True)
+  question1 = ndb.StringProperty(required=True)
+  question2 = ndb.StringProperty(required=True)
+  question3 = ndb.StringProperty(required=True)
+  question4 = ndb.StringProperty(required=True)
