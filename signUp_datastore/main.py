@@ -3,6 +3,7 @@ import jinja2
 import os
 from models import CsusmUser
 from models import *
+import models
 from google.appengine.ext import ndb
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -20,52 +21,7 @@ class HomePageHandler(webapp2.RequestHandler):
 
 
 class EnterInfoHandler(webapp2.RequestHandler):
-
-    # def get(self):  # for a get request
-    #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
-    #     #a_variable_dict = {"title": "Sign Up"}
-    #     self.response.write(welcome_template.render())
     def post(self):
-        # welcome_template = the_jinja_env.get_template('templates/welcome.html')
-        # self.response.write(welcome_template.render())
-        # q1 = self.request.get('question1')
-        # q2 = self.request.get('question2')
-        # q3 = self.request.get('question3')
-        # q4 = self.request.get('question4')
-        # squestion = questions(
-        #                     question1 = q1,
-        #                     question2 = q2,
-        #                     question3 = q3,
-        #                     question4 = q4)
-        # squestion.put()
-        # COMMENT
-    # def post(self):
-    #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
-    #     self.response.write(welcome_template.render())
-    #     q1 = self.request.get('question1')
-    #     q2 = self.request.get('question2')
-    #     q3 = self.request.get('question3')
-    #     q4 = self.request.get('question4')
-    #     squestion = questions(
-    #                         question1 = q1,
-    #                         question2 = q2,
-    #                         question3 = q3,
-    #                         question4 = q4)
-    #     squestion.put()
-        # COMMENT
-
-# class SignUp(webapp2.RequestHandler):
-#     def get(self):
-#         q1 = self.request.get('question1')
-#         q1 = self.request.get('question1')
-#         q1 = self.request.get('question1')
-#         q1 = self.request.get('question1')
-#         squestion = questions(
-#                          question1 = q1,
-#                          question2 = q2,
-#                          question3 = q3,
-#                          question4 = q4)
-
         welcome_template = the_jinja_env.get_template('templates/welcome.html')
         self.response.write(welcome_template.render())
 
@@ -77,12 +33,6 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
         user_first_line = self.request.get('user-first-name')
         user_last_line = self.request.get('user-last-name')
         user_third_line = self.request.get('user-email-address')
-
-        # q1 = self.request.get('question1')
-        # q2 = self.request.get('question2')
-        # q3 = self.request.get('question3')
-        # q4 = self.request.get('question4')
-        # test = self.request.get('user-email-address')
 
 
         # GABY'S CODE START
@@ -97,20 +47,19 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
                                     genre_one = user_genre_one)
         current_user_interests.put()
         # GABY'S CODE END
+        # IDK
+        # count_obj = UserCount.query().fetch()[0]
+        # current_count = count_obj.count
+        # count_obj.count = current_count + 1
+        # count_obj.put()
 
         current_user = CsusmUser(
                          first_name = user_first_line,
                          last_name = user_last_line,
-                         email_address = user_third_line)
-
-
-        # current_user.put()
-        # squestion = questions(
-        #                 question1 = q1,
-        #                 question2 = q2,
-        #                 question3 = q3,
-        #                 question4 = q4)
-        # squestion.put()
+                         email_address = user_third_line
+                         # ,
+                         # user_count = current_count
+                         )
 
         the_variable_dict = {"line1": user_first_line,
                              "line2": user_last_line,
