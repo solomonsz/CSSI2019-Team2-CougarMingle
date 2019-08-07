@@ -24,6 +24,7 @@ class EnterInfoHandler(webapp2.RequestHandler):
     #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
     #     #a_variable_dict = {"title": "Sign Up"}
     #     self.response.write(welcome_template.render())
+        # COMMENT
     def post(self):
         welcome_template = the_jinja_env.get_template('templates/welcome.html')
         self.response.write(welcome_template.render())
@@ -37,6 +38,8 @@ class EnterInfoHandler(webapp2.RequestHandler):
                             question3 = q3,
                             question4 = q4)
         squestion.put()
+        # COMMENT
+
 # class SignUp(webapp2.RequestHandler):
 #     def get(self):
 #         q1 = self.request.get('question1')
@@ -48,10 +51,6 @@ class EnterInfoHandler(webapp2.RequestHandler):
 #                          question2 = q2,
 #                          question3 = q3,
 #                          question4 = q4)
-
-    # def get(self):  # for a get request
-    #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
-    #     self.response.write(welcome_template.render())
 
     def post(self):
         welcome_template = the_jinja_env.get_template('templates/welcome.html')
@@ -67,14 +66,38 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
         user_last_line = self.request.get('user-last-name')
         user_third_line = self.request.get('user-email-address')
 
+        # GABY'S CODE START
+        # user_hobby_one = self.request.get('user_hobby_one')
+        # user_music_one = self.request.get('user_music_one')
+        # user_sports_one = self.request.get('user_sports_one')
+        # user_genre_one = self.request.get('user_genre_one')
+        # current_user_interests = CsusmUserInterests(
+        #                             hobby_one = user_hobby_one,
+        #                             music_one = user_music_one,
+        #                             sports_one = user_sports_one,
+        #                             genre_one = user_genre_one)
+        # current_user_interests.put()
+        # GABY'S CODE END
+
         current_user = CsusmUser(
                          first_name = user_first_line,
                          last_name = user_last_line,
                          email_address = user_third_line)
+
+
         current_user.put()
         the_variable_dict = {"line1": user_first_line,
                              "line2": user_last_line,
-                             "line3": user_third_line}
+                             "line3": user_third_line
+
+                             # GABY'S CODE START
+                             # ,
+                             # "hobbyOne": user_hobby_one,
+                             # "musicOne": user_music_one,
+                             # "sportsOne": user_sports_one,
+                             # "genreOne": user_genre_one
+                             # GABY'S CODE END
+                             }
         self.response.write(results_template.render(the_variable_dict))
 
 class ChatPage(webapp2.RequestHandler):
