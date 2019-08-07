@@ -8,7 +8,19 @@ class CsusmUser(ndb.Model):
     email_address = ndb.StringProperty(required=False)
     user_count = ndb.IntegerProperty(default=0)
 
+<<<<<<< HEAD
 # COMMENT/
+=======
+# <<<<<<< HEAD
+#
+# class questions(ndb.Model):
+#   question1 = ndb.StringProperty(required=True)
+#   question2 = ndb.StringProperty(required=True)
+#   question3 = ndb.StringProperty(required=True)
+#   question4 = ndb.StringProperty(required=True)
+# =======
+# COMMENT
+>>>>>>> 6a8de0514cb5fb1899fc22838bfdb3e9c00f6f16
 # class questions(ndb.Model):
 #     question1 = ndb.StringProperty(required=True)
 #     question2 = ndb.StringProperty(required=True)

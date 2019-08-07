@@ -10,6 +10,7 @@ the_jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+
 class HomePageHandler(webapp2.RequestHandler):
     def get(self):
         home_template = the_jinja_env.get_template('templates/homePage.html')
@@ -25,6 +26,19 @@ class EnterInfoHandler(webapp2.RequestHandler):
     #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
     #     #a_variable_dict = {"title": "Sign Up"}
     #     self.response.write(welcome_template.render())
+    def post(self):
+        # welcome_template = the_jinja_env.get_template('templates/welcome.html')
+        # self.response.write(welcome_template.render())
+        # q1 = self.request.get('question1')
+        # q2 = self.request.get('question2')
+        # q3 = self.request.get('question3')
+        # q4 = self.request.get('question4')
+        # squestion = questions(
+        #                     question1 = q1,
+        #                     question2 = q2,
+        #                     question3 = q3,
+        #                     question4 = q4)
+        # squestion.put()
         # COMMENT
     # def post(self):
     #     welcome_template = the_jinja_env.get_template('templates/welcome.html')
@@ -53,19 +67,24 @@ class EnterInfoHandler(webapp2.RequestHandler):
 #                          question3 = q3,
 #                          question4 = q4)
 
-    def post(self):
         welcome_template = the_jinja_env.get_template('templates/welcome.html')
         self.response.write(welcome_template.render())
 
 
 
-
 class ShowCsusmUserHandler(webapp2.RequestHandler):
     def post(self):
-        results_template = the_jinja_env.get_template('templates/results.html')
+        results_template = the_jinja_env.get_template('templates/usersPage.html')
         user_first_line = self.request.get('user-first-name')
         user_last_line = self.request.get('user-last-name')
         user_third_line = self.request.get('user-email-address')
+
+        # q1 = self.request.get('question1')
+        # q2 = self.request.get('question2')
+        # q3 = self.request.get('question3')
+        # q4 = self.request.get('question4')
+        # test = self.request.get('user-email-address')
+
 
         # GABY'S CODE START
         user_hobby_one = self.request.get('user_hobby_one')
@@ -92,11 +111,17 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
                          user_count = current_count)
 
 
-        current_user.put()
+        # current_user.put()
+        # squestion = questions(
+        #                 question1 = q1,
+        #                 question2 = q2,
+        #                 question3 = q3,
+        #                 question4 = q4)
+        # squestion.put()
+
         the_variable_dict = {"line1": user_first_line,
                              "line2": user_last_line,
                              "line3": user_third_line
-
                              # GABY'S CODE START
                              ,
                              "hobbyOne": user_hobby_one,
