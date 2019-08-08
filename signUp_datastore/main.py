@@ -60,7 +60,7 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
                          # ,
                          # user_count = current_count
                          )
-
+        current_user.put()
         the_variable_dict = {"line1": user_first_line,
                              "line2": user_last_line,
                              "line3": user_third_line
