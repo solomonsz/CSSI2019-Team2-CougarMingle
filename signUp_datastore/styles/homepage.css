@@ -5,6 +5,9 @@
  *
  * Made By MaterializeCSS.com
  */
+#cougmingle {
+  color: #2c6ed5;
+}
 
 nav ul a,
 nav .brand-logo {
@@ -36,7 +39,7 @@ p {
   }
   #index-banner .section {
     top: 10%;
-  
+
   }
 }
 
