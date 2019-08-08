@@ -114,11 +114,18 @@ class ChatPage(webapp2.RequestHandler):
         emp2 = " "
         for string in emp:
             emp2 += string
+        if emp2 == " ":
+            emp2 = "nothing"
+        peep = CsusmUser.query().fetch()[loc1].first_name
+        peep2 = CsusmUser.query().fetch()[loc2].first_name
 
         a_variable_dict = {
             "name": new,
             "name2": new2,
-            "match": emp2
+            "match": emp2,
+            "peep": peep,
+            "peep2": peep2
+
             # "adjective": "amazing"
         }
         self.response.write(welcome_template.render(a_variable_dict))
