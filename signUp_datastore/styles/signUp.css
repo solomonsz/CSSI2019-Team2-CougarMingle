@@ -9,6 +9,67 @@
 /* ==========================================================================
    #GRID
    ========================================================================== */
+html, body {
+     overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+#hobby {
+  padding: 10px;
+  grid-row: auto;
+  grid-column: auto;
+}
+
+#music {
+  padding: 10px;
+  grid-row: auto;
+  grid-column: auto;
+}
+
+#sports {
+  padding: 10px;
+  grid-row: auto;
+  grid-column: auto;
+}
+
+#tv {
+  padding: 10px;
+  grid-row: auto;
+  grid-column: auto;
+}
+
+#remember {
+  grid-row: 1;
+  grid-column: 1;
+}
+.cougar-mingle {
+  text-align: center;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #2c6ed5;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #1F4C93;
+}
+
+input[type=checkbox] {
+  align-items: flex-start;
+}
+
 #coug {
   display: block;
   margin-left: auto;
@@ -45,36 +106,6 @@
   }
 }
 
-/* ==========================================================================
-   #BOX-SIZING
-   ========================================================================== */
-/**
- * More sensible default box-sizing:
- * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
- */
-html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-/* ==========================================================================
-   #RESET
-   ========================================================================== */
-/**
- * A very simple reset that sits on top of Normalize.css.
- */
 body,
 h1, h2, h3, h4, h5, h6,
 blockquote, p, pre,
@@ -192,87 +223,7 @@ h6 {
   max-width: 680px;
 }
 
-/* ==========================================================================
-   #BUTTON
-   ========================================================================== */
-.btn {
-  line-height: 40px;
-  display: inline-block;
-  padding: 0 25px;
-  cursor: pointer;
-  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
-  color: #fff;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  font-size: 14px;
-  font-weight: 700;
-}
 
-.btn--radius {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-.btn--green {
-  background: #57b846;
-}
-
-.btn--green:hover {
-  background: #4dae3c;
-}
-
-/* ==========================================================================
-   #DATE PICKER
-   ========================================================================== */
-td.active {
-  background-color: #2c6ed5;
-}
-
-input[type="date" i] {
-  padding: 14px;
-}
-
-.table-condensed td, .table-condensed th {
-  font-size: 14px;
-  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
-  font-weight: 400;
-}
-
-.daterangepicker td {
-  width: 40px;
-  height: 30px;
-}
-
-.daterangepicker {
-  border: none;
-  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  display: none;
-  border: 1px solid #e0e0e0;
-  margin-top: 5px;
-}
-
-.daterangepicker::after, .daterangepicker::before {
-  display: none;
-}
-
-.daterangepicker thead tr th {
-  padding: 10px 0;
-}
-
-.daterangepicker .table-condensed th select {
-  border: 1px solid #ccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  font-size: 14px;
-  padding: 5px;
-  outline: none;
-}
 
 /* ==========================================================================
    #FORM
@@ -293,6 +244,10 @@ input {
   position: relative;
   margin-bottom: 30px;
   border-bottom: 2px solid #ccc;
+}
+
+.spacer {
+  padding-right: 10px;
 }
 
 .input-icon {
@@ -447,7 +402,7 @@ input {
 
 .card-1 .card-heading {
   background: url("../images/bg-head-02.jpg") center center/cover no-repeat;
-  padding-top: 210px;
+  padding-top: ;
 }
 
 .card-1 .card-body {

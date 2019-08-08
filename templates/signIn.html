@@ -3,32 +3,38 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-      <link rel="stylesheet" href="../signUp_datastore/styles/signIn.css">
+      <link rel="stylesheet" href="../signUp_datastore/styles/signUp.css">
     <title>Sign In</title>
   </head>
-  <body>
-    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+    <body>
       <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
-
        <div class="wrapper wrapper--w680">
-           <div class="card card-1">
-               <div class="card-heading">
-               <img id="coug" height="125px" width="125px" src="https://csusmcougars.com/images/logos/site/site.png" alt="cougargif">
+         <div class="card card-1">
+           <div class="card-body">
+            <img id="coug" height="125px" width="125px" src="https://csusmcougars.com/images/logos/site/site.png" alt="cougargif">
+             <h3 class="cougar-mingle">Cougar Mingle</h3>
+             <br>
+             <br>
+             <br>
+             <h2 class="title">Sign In</h2>
+             <form method="POST">
+               <div class="input-group">
+                 <input type="email" placeholder="Enter Email address" name = "uname">
                </div>
-               <div class="card-body">
-                   <h2 class="title">Sign In</h2>
-                   <form method="POST" >
-                     <div class="input-group">
-                      <input type="email" placeholder="Enter Email address" name = "uname">
-                    </div>
-                    <div class="input-group">
-                      <input type="password" placeholder="Enter Password" name = "psw" required>
-                    </div>
-                    <input type="checkbox" value="remember-me">Remember me
-                    <div class="p-t-20">
-                      <input type="submit" value="Go!">
-                    </div>
-                  </form>
-
-      </body>
+               <div class="input-group">
+                 <input type="password" placeholder="Enter Password" name = "psw" required>
+               </div>
+               <div class="container" id="remember">
+                 <h5>Remember Me</h5>
+                 <input type="checkbox" value="remember-me"></input>
+               </div>
+               <div class="p-t-20">
+                 <input type="submit" value="Go!">
+               </div>
+             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
