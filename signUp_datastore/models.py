@@ -17,9 +17,7 @@ class CsusmUserInterests(ndb.Model):
 
 class UserCount(ndb.Model):
     count = ndb.IntegerProperty(default=0)
-
-    def increment(self):
+    def plusone(self):
         self.count += 1
-
 # count = UserCount()
 # count.put()

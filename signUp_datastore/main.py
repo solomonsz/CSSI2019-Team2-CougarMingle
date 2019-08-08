@@ -2,6 +2,7 @@ import webapp2
 import jinja2
 import os
 from models import CsusmUser
+from models import UserCount
 from models import *
 import models
 from google.appengine.ext import ndb
@@ -48,19 +49,19 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
         current_user_interests.put()
         # GABY'S CODE END
         # IDK
-        # count_obj = UserCount.query().fetch()[0]
-        # current_count = count_obj.count
-        # count_obj.count = current_count + 1
-        # count_obj.put()
+        count_obj = UserCount.query().fetch()[0]
+        current_count = count_obj.count
+        count_obj.count = current_count + 1
+        count_obj.put()
 
         current_user = CsusmUser(
                          first_name = user_first_line,
                          last_name = user_last_line,
                          email_address = user_third_line
-                         # ,
-                         # user_count = current_count
+                         ,
+                         user_count = current_count
                          )
-
+        current_user.put()
         the_variable_dict = {"line1": user_first_line,
                              "line2": user_last_line,
                              "line3": user_third_line
@@ -72,14 +73,29 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
                              "genreOne": user_genre_one
                              # GABY'S CODE END
                              }
+        # empty = []
+        # empty = CsusmUserInterests.query().fetch()
+        # print empty
+
+
         self.response.write(results_template.render(the_variable_dict))
 
 class ChatPage(webapp2.RequestHandler):
     def get(self):  # for a get request
         welcome_template = the_jinja_env.get_template('templates/matchPage.html')
-        allusers = CsusmUser.query().fetch()
+        interest = CsusmUserInterests.query().fetch()
+        # emp = []
+        # for user in UserCount.query().fetch():
+        #     user.count = int(user.count).count
+        #     emp.append(user.count)
+        fuser = interest[UserCount.query().fetch()[0].count-1]
+        suser = interest[UserCount.query().fetch()[0].count-2]
+        new = [fuser.genre_one, fuser.hobby_one, fuser.music_one, fuser.sports_one]
+        new2 = [suser.genre_one, suser.hobby_one, suser.music_one, suser.sports_one]
+
         a_variable_dict = {
-            "name": name[2]
+            "name": new,
+            "name2": new2
             # "adjective": "amazing"
         }
         self.response.write(welcome_template.render(a_variable_dict))
