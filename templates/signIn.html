@@ -3,24 +3,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-      <link rel="stylesheet" href="..\cssiStyle\style.css">
+      <link rel="stylesheet" href="../signUp_datastore/styles/signIn.css">
     <title>Sign In</title>
   </head>
-  <body class="text-center">
-    <form class="form-signin">
-      <img class="cougarGif" src="https://media1.giphy.com/media/1zlDnwCxT9vWmwcBhd/source.gif" alt="" width="72" height="72">
-      <h1 >Please sign in</h1>
-      <label for="inputEmail">Email address</label>
-      <input type="email" placeholder="Enter Email address" name = "uname">
-      <br><br>
-      <label for="inputPassword">Password</label>
-      <input type="password" placeholder="Enter Password" name = "psw" required>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-  <button class="signInButton" type="submit">Sign In</button>
-  </form>
-</body>
+  <body>
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+      <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+
+       <div class="wrapper wrapper--w680">
+           <div class="card card-1">
+               <div class="card-heading">
+               <img id="coug" height="125px" width="125px" src="https://csusmcougars.com/images/logos/site/site.png" alt="cougargif">
+               </div>
+               <div class="card-body">
+                   <h2 class="title">Sign In</h2>
+                   <form method="POST" >
+                     <div class="input-group">
+                      <input type="email" placeholder="Enter Email address" name = "uname">
+                    </div>
+                    <div class="input-group">
+                      <input type="password" placeholder="Enter Password" name = "psw" required>
+                    </div>
+                    <input type="checkbox" value="remember-me">Remember me
+                    <div class="p-t-20">
+                      <input type="submit" value="Go!">
+                    </div>
+                  </form>
+
+      </body>
 </html>
