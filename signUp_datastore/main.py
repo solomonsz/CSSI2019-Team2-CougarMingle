@@ -100,14 +100,25 @@ class ChatPage(webapp2.RequestHandler):
         # for user in UserCount.query().fetch():
         #     user.count = int(user.count).count
         #     emp.append(user.count)
-        fuser = interest[CsusmUser.query().fetch()[0].user_count-1]
-        suser = interest[CsusmUser.query().fetch()[0].user_count-2]
+        loc1 = CsusmUser.query().fetch()[0].user_count-1
+        loc2 = CsusmUser.query().fetch()[0].user_count-2
+        fuser = interest[loc1]
+        suser = interest[loc2]
         new = [fuser.genre_one, fuser.hobby_one, fuser.music_one, fuser.sports_one]
         new2 = [suser.genre_one, suser.hobby_one, suser.music_one, suser.sports_one]
+        emp = []
+        for newi in new:
+            for newi2 in new2:
+                if newi == newi2:
+                    emp.append(newi)
+        emp2 = " "
+        for string in emp:
+            emp2 += string
 
         a_variable_dict = {
             "name": new,
-            "name2": new2
+            "name2": new2,
+            "match": emp2
             # "adjective": "amazing"
         }
         self.response.write(welcome_template.render(a_variable_dict))
