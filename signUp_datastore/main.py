@@ -49,18 +49,30 @@ class ShowCsusmUserHandler(webapp2.RequestHandler):
         current_user_interests.put()
         # GABY'S CODE END
         # IDK
-        count_obj = UserCount.query().fetch()[0]
-        current_count = count_obj.count
-        count_obj.count = current_count + 1
-        count_obj.put()
+        # count_obj = UserCount.query().fetch()[0]
+        # current_count = count_obj.count
+        # count_obj.count = current_count + 1
+        # count_obj.put()
+        all_obj = CsusmUser.query().fetch()
+        if all_obj:
+            count_obj = all_obj[-1]
+            current_count = count_obj.user_count + 1
+            current_user = CsusmUser(
+                             first_name = user_first_line,
+                             last_name = user_last_line,
+                             email_address = user_third_line
+                             ,
+                             user_count = current_count
+                             )
+        else:
+            current_user = CsusmUser(
+                             first_name = user_first_line,
+                             last_name = user_last_line,
+                             email_address = user_third_line
+                             ,
+                             user_count = 0
+                             )
 
-        current_user = CsusmUser(
-                         first_name = user_first_line,
-                         last_name = user_last_line,
-                         email_address = user_third_line
-                         ,
-                         user_count = current_count
-                         )
         current_user.put()
         the_variable_dict = {"line1": user_first_line,
                              "line2": user_last_line,
@@ -88,8 +100,8 @@ class ChatPage(webapp2.RequestHandler):
         # for user in UserCount.query().fetch():
         #     user.count = int(user.count).count
         #     emp.append(user.count)
-        fuser = interest[UserCount.query().fetch()[0].count-1]
-        suser = interest[UserCount.query().fetch()[0].count-2]
+        fuser = interest[CsusmUser.query().fetch()[0].user_count-1]
+        suser = interest[CsusmUser.query().fetch()[0].user_count-2]
         new = [fuser.genre_one, fuser.hobby_one, fuser.music_one, fuser.sports_one]
         new2 = [suser.genre_one, suser.hobby_one, suser.music_one, suser.sports_one]
 
