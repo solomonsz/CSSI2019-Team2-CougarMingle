@@ -100,8 +100,8 @@ class ChatPage(webapp2.RequestHandler):
         # for user in UserCount.query().fetch():
         #     user.count = int(user.count).count
         #     emp.append(user.count)
-        loc1 = CsusmUser.query().fetch()[0].user_count-1
-        loc2 = CsusmUser.query().fetch()[0].user_count-2
+        loc1 = CsusmUser.query().fetch()[-1].user_count-1
+        loc2 = CsusmUser.query().fetch()[-1].user_count-2
         fuser = interest[loc1]
         suser = interest[loc2]
         new = [fuser.genre_one, fuser.hobby_one, fuser.music_one, fuser.sports_one]
