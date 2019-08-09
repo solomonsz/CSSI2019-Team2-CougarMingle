@@ -111,21 +111,23 @@ class ChatPage(webapp2.RequestHandler):
             for newi2 in new2:
                 if newi == newi2:
                     emp.append(newi)
-        emp2 = " "
-        for string in emp:
-            emp2 += string
-        if emp2 == " ":
-            emp2 = "nothing"
         peep = CsusmUser.query().fetch()[loc1].first_name
         peep2 = CsusmUser.query().fetch()[loc2].first_name
-
+        info = CsusmUser.query().fetch()[loc1].email_address
+        info2 = CsusmUser.query().fetch()[loc2].email_address
+        emp2 = " "
+        for string in emp:
+            emp2 += " " + string
+        if emp2 == " ":
+            emp2 = "nothing"
+            info = "not matched"
+            info2 = "no match"
         a_variable_dict = {
-            "name": new,
-            "name2": new2,
             "match": emp2,
             "peep": peep,
-            "peep2": peep2
-
+            "peep2": peep2,
+            "info":info,
+            "info2":info2
             # "adjective": "amazing"
         }
         self.response.write(welcome_template.render(a_variable_dict))
